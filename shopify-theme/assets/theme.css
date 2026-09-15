@@ -1,0 +1,21 @@
+/* Aurelia Noir Shopify Theme 2.0 Base CSS */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-navy-deep, #06131c);
+  color: var(--color-white-soft, #e8edf0);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+}
+
+.gold-accent {
+  color: var(--color-gold, #e6be62);
+}
+
+/* Transitions */
+button, a {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,15 @@
+{
+  "current": {
+    "color_bg": "#06131c",
+    "color_surface": "#092335",
+    "color_gold": "#e6be62",
+    "color_text": "#e8edf0",
+    "color_muted": "#a9bbc5",
+    "card_corner_radius": "16px",
+    "show_quick_view": true,
+    "show_ratings": true,
+    "cart_type": "drawer",
+    "free_shipping_message": "Complimentary Worldwide Delivery On All Orders",
+    "enable_gift_note": true
+  }
+}

@@ -1,0 +1,19 @@
+<div id="cart-drawer" class="hidden fixed inset-0 z-50 overflow-hidden">
+  <div id="cart-drawer-backdrop" class="absolute inset-0 bg-[#06131c]/80 backdrop-blur-sm"></div>
+  <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+    <div class="w-screen max-w-md bg-[#092335] border-l border-[#164d68] p-6 flex flex-col justify-between text-left">
+      <div class="flex items-center justify-between pb-4 border-b border-[#164d68]">
+        <h3 class="font-serif text-xl text-[#f4efe5]">Your Shopping Bag</h3>
+        <button id="cart-drawer-close" class="text-[#a9bbc5] hover:text-white">{% render 'icon-close' %}</button>
+      </div>
+      <div id="cart-drawer-items" class="flex-1 overflow-y-auto py-4">
+        <p class="text-xs text-[#a9bbc5]">Bag synchronization active.</p>
+      </div>
+      <div class="pt-4 border-t border-[#164d68]">
+        <a href="/checkout" class="block w-full py-3.5 rounded-full bg-[#e6be62] text-[#06131c] font-semibold text-center text-xs uppercase tracking-wider hover:bg-[#edd085]">
+          Proceed to Checkout
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

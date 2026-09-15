@@ -1,0 +1,75 @@
+<header id="shopify-section-header" class="sticky top-0 z-40 w-full py-3 px-4 sm:px-8 bg-[#06131c]/80 backdrop-blur-md border-b border-[#164d68]/40">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <!-- Brand Wordmark -->
+    <a href="{{ routes.root_url }}" class="flex flex-col items-start text-left">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 220 }}" alt="{{ shop.name }}" class="h-8 w-auto">
+      {%- else -%}
+        <span class="font-serif text-2xl sm:text-3xl tracking-[0.22em] text-[#f4efe5] font-light uppercase hover:text-[#e6be62] transition-colors">
+          {{ shop.name | default: 'AURELIA NOIR' }}
+        </span>
+        <span class="text-[9px] uppercase tracking-[0.35em] text-[#e6be62] font-medium -mt-0.5">
+          {{ section.settings.tagline | default: 'Haute Parfumerie • Paris' }}
+        </span>
+      {%- endif -%}
+    </a>
+
+    <!-- Navigation Menu -->
+    <nav class="hidden lg:flex items-center gap-8">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62] transition-colors {% if link.active %}text-[#e6be62] font-semibold{% endif %}">
+          {{ link.title }}
+        </a>
+      {%- else -%}
+        <a href="/collections/all" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62]">Fragrances</a>
+        <a href="/collections" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62]">Collections</a>
+        <a href="/pages/about" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62]">Atelier</a>
+        <a href="/blogs/journal" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62]">Gazette</a>
+        <a href="/pages/contact" class="text-xs uppercase tracking-[0.16em] text-[#e8edf0] hover:text-[#e6be62]">Concierge</a>
+      {%- endfor -%}
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <a href="{{ routes.search_url }}" class="p-2 text-[#e8edf0] hover:text-[#e6be62] transition-colors" aria-label="Search">
+        {% render 'icon-search' %}
+      </a>
+
+      <button id="cart-drawer-trigger" class="relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#092335] hover:bg-[#0d3047] border border-[#164d68] text-[#e8edf0] transition-colors" aria-label="Cart">
+        {% render 'icon-cart' %}
+        <span class="text-xs font-semibold text-[#e6be62]">{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Custom Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Header Subtitle Tagline",
+      "default": "Haute Parfumerie • Paris"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Enable Sticky Header",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

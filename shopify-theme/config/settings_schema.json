@@ -1,0 +1,138 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Aurelia Noir Luxury Fragrance",
+    "theme_version": "1.0.0",
+    "theme_author": "Aurelia Noir Haute Parfumerie",
+    "theme_documentation_url": "https://aurelianoir.com/docs",
+    "theme_support_url": "https://aurelianoir.com/support"
+  },
+  {
+    "name": "Colors & Aesthetics",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Deep Navy Background",
+        "default": "#06131c"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface Midnight Blue",
+        "default": "#092335"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Champagne Gold Accent",
+        "default": "#e6be62"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Primary (Soft White)",
+        "default": "#e8edf0"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Muted Slate Text",
+        "default": "#a9bbc5"
+      }
+    ]
+  },
+  {
+    "name": "Typography & Hierarchy",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Header Display Font",
+        "default": "cormorant_garamond_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Body Sans Font",
+        "default": "plus_jakarta_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Product Cards",
+    "settings": [
+      {
+        "type": "select",
+        "id": "card_corner_radius",
+        "label": "Card Corner Radius",
+        "options": [
+          {
+            "value": "8px",
+            "label": "Subtle (8px)"
+          },
+          {
+            "value": "16px",
+            "label": "Classic Luxury (16px)"
+          },
+          {
+            "value": "24px",
+            "label": "Curved Architectural (24px)"
+          }
+        ],
+        "default": "16px"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quick_view",
+        "label": "Enable Quick View Modal",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_ratings",
+        "label": "Display Star Ratings",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_secondary_image_on_hover",
+        "label": "Show Secondary Still on Hover",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Cart Drawer & Shipping",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart Type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Slide-Out Drawer"
+          },
+          {
+            "value": "page",
+            "label": "Dedicated Page"
+          }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_message",
+        "label": "Free Delivery Announcement",
+        "default": "Complimentary Global Courier Delivery Unlocked"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gift_note",
+        "label": "Enable Complimentary Gift Message",
+        "default": true
+      }
+    ]
+  }
+]

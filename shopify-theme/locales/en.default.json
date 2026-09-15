@@ -1,0 +1,26 @@
+{
+  "general": {
+    "search": "Search Haute Fragrances",
+    "submit": "Submit"
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "close": "Close"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Shopping Bag",
+      "sold_out": "Allocation Exhausted",
+      "unavailable": "Unavailable",
+      "price": "Price"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Shopping Bag",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Secure Checkout",
+      "empty": "Your bag is presently empty."
+    }
+  }
+}

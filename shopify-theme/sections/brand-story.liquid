@@ -1,0 +1,75 @@
+<section id="shopify-section-brand-story" class="w-full px-4 sm:px-6 lg:px-8 py-16">
+  <div class="max-w-7xl mx-auto rounded-3xl bg-[#092335]/50 border border-[#164d68]/50 overflow-hidden shadow-2xl p-6 sm:p-10 lg:p-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="lg:col-span-6 relative">
+        <div class="rounded-2xl overflow-hidden border border-[#164d68] shadow-2xl bg-[#06131c]">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 800 | image_tag: class: 'w-full h-auto max-h-[500px] object-cover' }}
+          {%- else -%}
+            <img src="{{ 'brand-story.jpg' | asset_url }}" alt="Grasse Atelier" class="w-full h-auto max-h-[500px] object-cover">
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="lg:col-span-6 flex flex-col items-start text-left space-y-6">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#e6be62] font-semibold block">
+          {{ section.settings.eyebrow | default: 'Haute Parfumerie Pedigree' }}
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#f4efe5] font-normal leading-[1.15]">
+          {{ section.settings.heading | default: 'Where Ancient Alchemy Meets Modern Distinction' }}
+        </h2>
+        <div class="text-base text-[#a9bbc5] font-light leading-relaxed space-y-4">
+          {{ section.settings.text | default: '<p>Founded in the alpine hinterlands behind Grasse, Aurelia Noir was conceived as a sanctuary against mass-market homogeneity. We approach fragrance not as a consumer commodity, but as an invisible architecture.</p>' }}
+        </div>
+        <a href="{{ section.settings.button_link | default: '/pages/about' }}" class="px-8 py-3.5 rounded-full bg-[#0d3047] hover:bg-[#164d68] text-[#e6be62] border border-[#e6be62]/50 text-xs font-semibold uppercase tracking-[0.15em] transition-all">
+          {{ section.settings.button_text | default: 'Explore The Atelier Story' }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Haute Parfumerie Pedigree"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where Ancient Alchemy Meets Modern Distinction"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Story Body Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "Explore The Atelier Story"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Atelier Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Story"
+    }
+  ]
+}
+{% endschema %}

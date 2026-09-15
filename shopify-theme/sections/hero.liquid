@@ -1,0 +1,108 @@
+<section id="shopify-section-hero" class="relative w-full px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+  <div class="max-w-7xl mx-auto relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#092335] via-[#0d3047] to-[#06131c] border border-[#164d68]/60 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12 p-6 sm:p-10 lg:p-16 relative z-10">
+      <div class="lg:col-span-7 flex flex-col items-start text-left space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#06131c]/60 border border-[#e6be62]/40">
+          <span class="text-[#e6be62]">✦</span>
+          <span class="text-[11px] uppercase tracking-[0.25em] text-[#f4efe5] font-medium">
+            {{ section.settings.eyebrow | default: 'Collection Nocturne 2026' }}
+          </span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#f4efe5] font-normal leading-[1.08] tracking-tight">
+          {{ section.settings.heading | default: 'THE ALCHEMY OF CELESTIAL SCENT' }}
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#a9bbc5] max-w-xl leading-relaxed font-light">
+          {{ section.settings.subheading | default: 'Bespoke extraits hand-distilled in Grasse from rare botanical absolutes and smoky midnight resins.' }}
+        </p>
+
+        <div class="pt-3 flex flex-wrap items-center gap-4">
+          <a href="{{ section.settings.primary_button_link | default: '/collections/all' }}" class="px-8 py-4 rounded-full bg-[#e6be62] hover:bg-[#edd085] text-[#06131c] font-semibold text-xs uppercase tracking-[0.16em] transition-all shadow-lg hover:-translate-y-0.5">
+            {{ section.settings.primary_button_text | default: 'Explore the Collection' }}
+          </a>
+          <a href="{{ section.settings.secondary_button_link | default: '/pages/about' }}" class="px-7 py-4 rounded-full bg-transparent hover:bg-[#164d68]/30 text-[#f4efe5] hover:text-[#e6be62] border border-[#f4efe5]/30 text-xs font-medium uppercase tracking-[0.16em] transition-all">
+            {{ section.settings.secondary_button_text | default: 'Discover Your Scent' }}
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative flex justify-center items-center">
+        <div class="relative rounded-2xl overflow-hidden border border-[#164d68]/80 shadow-2xl bg-[#06131c]">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 800 | image_tag: class: 'w-full h-auto max-h-[520px] object-cover' }}
+          {%- else -%}
+            <img src="{{ 'hero-campaign.jpg' | asset_url }}" alt="Aurelia Noir Campaign Flacon" class="w-full h-auto max-h-[520px] object-cover">
+          {%- endif -%}
+          <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#06131c]/80 backdrop-blur-md border border-[#e6be62]/30 text-left flex justify-between items-center">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-[#e6be62] font-semibold block">Flagship Extrait</span>
+              <h3 class="font-serif text-[#f4efe5] text-lg font-medium">Nuit Céleste</h3>
+            </div>
+            <span class="px-3 py-1 rounded bg-[#e6be62] text-[#06131c] text-xs font-semibold uppercase">32% Extrait</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Campaign",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Badge Text",
+      "default": "Maison Aurelia Noir • Collection Nocturne"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Editorial Heading",
+      "default": "THE ALCHEMY OF CELESTIAL SCENT"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Supporting Description",
+      "default": "Bespoke extraits and nocturnal elixirs hand-distilled in the high plateaus of Grasse. Formulated for presence, longevity, and poetic distinction."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary Button Label",
+      "default": "Explore the Collection"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button Label",
+      "default": "Find Your Signature"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Campaign Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Campaign"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,58 @@
+<section id="shopify-section-newsletter" class="w-full px-4 sm:px-6 lg:px-8 py-16">
+  <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-[#092335] to-[#06131c] border border-[#164d68]/60 p-8 sm:p-14 text-center space-y-6">
+    <span class="text-[11px] uppercase tracking-[0.25em] text-[#e6be62] font-semibold block">
+      {{ section.settings.eyebrow | default: 'The Aurelia Circle' }}
+    </span>
+    <h2 class="font-serif text-3xl sm:text-4xl text-[#f4efe5] font-normal">
+      {{ section.settings.heading | default: 'Reserve Your Place in the Atelier Guild' }}
+    </h2>
+    <p class="text-sm text-[#a9bbc5] max-w-xl mx-auto font-light leading-relaxed">
+      {{ section.settings.text | default: 'Subscribers receive private allocation notices for limited seasonal distillations and invitations to Parisian salon tastings.' }}
+    </p>
+
+    {% form 'customer', class: 'flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input
+        type="email"
+        name="contact[email]"
+        required
+        placeholder="Enter your confidential email..."
+        class="w-full px-5 py-3.5 bg-[#06131c] border border-[#164d68] rounded-full text-sm text-[#e8edf0] placeholder-[#a9bbc5]/60 focus:outline-none focus:border-[#e6be62]"
+      >
+      <button type="submit" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#e6be62] text-[#06131c] font-semibold text-xs uppercase tracking-[0.14em] hover:bg-[#edd085] transition-all shrink-0">
+        Subscribe
+      </button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "The Aurelia Circle"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Reserve Your Place in the Atelier Guild"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Subscribers receive private allocation notices for limited seasonal distillations."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

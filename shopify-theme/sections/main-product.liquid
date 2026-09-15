@@ -1,0 +1,39 @@
+<section id="shopify-section-main-product" class="w-full px-4 sm:px-6 lg:px-8 py-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
+    <div class="lg:col-span-7 rounded-3xl overflow-hidden bg-[#06131c] border border-[#164d68]/60 aspect-[4/5] flex items-center justify-center">
+      {%- if product.featured_image != blank -%}
+        <img src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title }}" class="w-full h-full object-cover">
+      {%- else -%}
+        <img src="{{ 'hero-campaign.jpg' | asset_url }}" alt="Flacon" class="w-full h-full object-cover">
+      {%- endif -%}
+    </div>
+
+    <div class="lg:col-span-5 space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#e6be62] font-semibold block">Extrait de Parfum</span>
+        <h1 class="font-serif text-4xl text-[#f4efe5] font-normal">{{ product.title }}</h1>
+        <div class="font-serif text-3xl text-[#e6be62]">{{ product.price | money }}</div>
+      </div>
+
+      <div class="text-sm text-[#a9bbc5] leading-relaxed">
+        {{ product.description }}
+      </div>
+
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <div class="pt-4">
+          <button type="submit" class="w-full py-4 px-8 rounded-full bg-[#e6be62] hover:bg-[#edd085] text-[#06131c] font-semibold text-xs uppercase tracking-[0.16em] transition-all shadow-lg">
+            Add to Shopping Bag &bull; {{ product.price | money }}
+          </button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": []
+}
+{% endschema %}

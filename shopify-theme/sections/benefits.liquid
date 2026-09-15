@@ -1,0 +1,55 @@
+<section id="shopify-section-benefits" class="w-full px-4 sm:px-6 lg:px-8 py-8">
+  <div class="max-w-7xl mx-auto rounded-2xl bg-[#092335]/60 border border-[#164d68]/40 p-6 sm:p-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[#164d68]/30">
+      {%- for block in section.blocks -%}
+        <div class="flex items-start gap-4 {% unless forloop.first %}pt-4 sm:pt-0 sm:pl-6{% endunless %}" {{ block.shopify_attributes }}>
+          <div class="p-2.5 rounded-xl bg-[#0d3047] border border-[#e6be62]/30 text-[#e6be62] shrink-0">
+            ✦
+          </div>
+          <div class="text-left">
+            <h4 class="font-serif text-[#f4efe5] text-base font-medium">{{ block.settings.title }}</h4>
+            <p class="text-xs text-[#a9bbc5] mt-1 leading-relaxed">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits Strip",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Benefit Title",
+          "default": "Complimentary Delivery"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit Subtitle",
+          "default": "Climate-controlled global courier delivery on all fragrance orders."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Strip",
+      "blocks": [
+        { "type": "benefit", "settings": { "title": "Complimentary Delivery", "text": "Climate-controlled courier delivery worldwide with tracked dispatch." } },
+        { "type": "benefit", "settings": { "title": "Pure Extrait Formulations", "text": "High concentration 22% to 34% fragrance oils for extraordinary presence." } },
+        { "type": "benefit", "settings": { "title": "Artisanal Gift Presentation", "text": "Delivered in midnight blue cases hand-sealed with gold wax crest." } },
+        { "type": "benefit", "settings": { "title": "Curated Discovery Vials", "text": "Two complimentary 2ml extrait samples included with every flacon." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
